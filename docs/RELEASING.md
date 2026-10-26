@@ -1,0 +1,83 @@
+# Release 0.1.5
+
+Remove `postinstall` to avoid npm `allow-scripts` warnings on global install.
+Personal config is now created on first command use instead.
+
+# Release 0.1.4
+
+README fix: use `jsonc` for the config example so inline default comments preview correctly.
+
+# Release 0.1.3
+
+Store setup improvements: `sstores` defaults to global config, `sstores .` opens the
+personal config file, install creates `~/.sshop.json` automatically, and the
+cheat sheet PDF was regenerated.
+
+# Release 0.1.2
+
+README update
+
+# Release 0.1.1
+
+Documentation update: simpler setup instructions, shorter command descriptions,
+and a downloadable one-page PDF cheat sheet linked from the README.
+CLI behavior is unchanged. The PDF is hosted in the GitHub repository.
+
+# Release 0.1.0
+
+Initial release: configurable store aliases, personal/project JSON configuration,
+direct commands, optional Bash/Zsh and PowerShell integration, literal legacy
+alias import, dry-run output, development port shorthand (`sd -p`), JSON output
+(`sl -j`, `si -j`), global configuration (`-g`), and development selection (`-d`).
+
+## Verification
+
+- Regenerate `output/pdf/shopify-command-cheat-sheet.pdf` with
+  `npm run generate:pdf` when command docs change (requires Python 3 and
+  `reportlab`).
+- Node 22/24 CI on macOS, Linux, and Windows checks the installed archive,
+  command entry points, real Shopify CLI help, and PowerShell shortcuts.
+- `npm run release:check` checks syntax, runs tests, builds and installs an
+  isolated archive, and scans for known credential formats and private domains.
+- Live Shopify login, pull, development sync, and Ctrl+C against a disposable
+  store/theme have not been verified as part of this release. Automated tests
+  exercise argument forwarding without modifying stores.
+
+Personal `.sshop.json` and legacy `base_custom_cli.sh` are ignored and excluded
+from npm. The LICENSE contains the owner's public copyright attribution.
+Pattern checks reduce leakage risk; they are not a complete security audit.
+
+## Publishing authentication
+
+`npm login` session tokens still require a one-time password when 2FA is enabled
+for publishing. For OTP-free publishes, create a token once and store it in your
+user `~/.npmrc` (never commit it):
+
+1. Sign in at [npmjs.com](https://www.npmjs.com/) → **Access Tokens** → **Generate New Token**.
+2. Choose **Granular Access Token** (recommended) or **Classic Automation Token**.
+3. Grant **Read and write** access to the `simplified-shopify-cli` package.
+4. Save the token locally:
+
+```sh
+npm config set //registry.npmjs.org/:_authToken=YOUR_TOKEN --location=user
+```
+
+After that, `npm publish ARCHIVE --access public` works without `--otp`.
+
+## Publishing procedure
+
+1. Update the version and documentation; run `npm run release:check`.
+2. Commit and require the current commit's CI run to pass.
+3. Build an archive with `npm pack`, inspect `npm publish ARCHIVE --dry-run`,
+   then publish that archive with `npm publish ARCHIVE --access public`.
+4. Verify registry integrity, install the exact released version, and tag its
+   source commit. npm versions are immutable; corrections need a new version.
+
+## Install
+
+```sh
+npm install -g simplified-shopify-cli
+```
+
+Use `sd`, `sp`, `sl`, and the other commands directly. A CDN is not required
+for this Node-based CLI. Authentication remains managed by Shopify CLI.
