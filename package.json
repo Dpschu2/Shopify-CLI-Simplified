@@ -48,11 +48,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deanschulz4/Shopify-CLI-Simplified.git"
+    "url": "git+https://github.com/Dpschu2/Shopify-CLI-Simplified.git"
   },
-  "homepage": "https://github.com/deanschulz4/Shopify-CLI-Simplified#readme",
+  "homepage": "https://github.com/Dpschu2/Shopify-CLI-Simplified#readme",
   "bugs": {
-    "url": "https://github.com/deanschulz4/Shopify-CLI-Simplified/issues"
+    "url": "https://github.com/Dpschu2/Shopify-CLI-Simplified/issues"
   },
   "publishConfig": {
     "access": "public",
