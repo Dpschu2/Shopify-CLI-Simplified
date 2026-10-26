@@ -9,7 +9,7 @@ Short commands for Shopify themes: `sd` to develop, `sp` to pull, and `sl` to li
 Install **Node.js 22.12 or newer**, then run:
 
 ```sh
-npm install -g @shopify/cli simplified-shopify-cli
+npm install -g @shopify/cli shopify-cli-simplified
 ```
 
 Works on macOS, Linux, and Windows. No extra setup for macOS/zsh.
@@ -178,7 +178,7 @@ Keep store/theme options and `--dry-run` before `--`.
 ## Uninstall
 
 ```sh
-npm uninstall -g simplified-shopify-cli
+npm uninstall -g shopify-cli-simplified
 ```
 
 Remove any optional shell profile line too. Your config files are kept.

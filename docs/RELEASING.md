@@ -1,6 +1,6 @@
 # Release 0.1.6
 
-Moving repo
+Publish as `shopify-cli-simplified`. The previous npm name was unpublished and cannot be reused yet.
 
 # Release 0.1.5
 
@@ -59,7 +59,7 @@ user `~/.npmrc` (never commit it):
 
 1. Sign in at [npmjs.com](https://www.npmjs.com/) → **Access Tokens** → **Generate New Token**.
 2. Choose **Granular Access Token** (recommended) or **Classic Automation Token**.
-3. Grant **Read and write** access to the `simplified-shopify-cli` package.
+3. Grant **Read and write** access to the `shopify-cli-simplified` package.
 4. Save the token locally:
 
 ```sh
@@ -80,7 +80,7 @@ After that, `npm publish ARCHIVE --access public` works without `--otp`.
 ## Install
 
 ```sh
-npm install -g simplified-shopify-cli
+npm install -g shopify-cli-simplified
 ```
 
 Use `sd`, `sp`, `sl`, and the other commands directly. A CDN is not required

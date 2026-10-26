@@ -1,5 +1,5 @@
 {
-  "name": "simplified-shopify-cli",
+  "name": "shopify-cli-simplified",
   "version": "0.1.6",
   "description": "Configurable store aliases and shortcuts for Shopify theme development",
   "type": "module",
