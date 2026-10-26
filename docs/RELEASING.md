@@ -1,3 +1,7 @@
+# Release 0.1.6
+
+Moving repo
+
 # Release 0.1.5
 
 Remove `postinstall` to avoid npm `allow-scripts` warnings on global install.

@@ -135,7 +135,7 @@ def build_pdf():
     story.append(make_table(("Command", "What it does"), STORES, [2.35 * inch, 4.5 * inch], styles))
     story.append(Spacer(1, 3))
     story.append(Paragraph(FOOTER, styles["Footer"]))
-    story.append(Paragraph("github.com/deanschulz4/Shopify-CLI-Simplified", styles["Link"]))
+    story.append(Paragraph("github.com/Dpschu2/Shopify-CLI-Simplified", styles["Link"]))
 
     doc.build(story, onFirstPage=lambda canvas, doc: canvas.setFont("Helvetica", 6.5) or canvas.drawRightString(
         doc.pagesize[0] - doc.rightMargin, 0.28 * inch, "1 / 1"
